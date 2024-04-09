@@ -1,4 +1,4 @@
-<h1 align="center"> Pro </h1>
+<h1 align="center"> Desafio blog de gatos </h1>
 
 <p align="justify">
 Tente se atentar ao conteúdo que foi passado na aula. Portanto, nesse desafio, lembre-se de usar:
