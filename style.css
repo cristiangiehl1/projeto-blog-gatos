@@ -1,0 +1,270 @@
+/* 
+    CONFIGURAÇÕES GLOBAIS
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 12;
+    --saturation: 50%;
+    --lightness: 30%;
+    --bg-base-header-footer: #065E7C;
+    
+    /* hsl (hue, saturation, lightness) */
+    --color-base-title: hsl(240, 6%, var(--lightness)); 
+    --color-base-content: hsl(240, 5%, var(--lightness));
+
+}
+
+html, 
+body {
+    background-color: #FFF;
+
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6rem;
+}
+
+.page {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+/* 
+    CONFIGURAÇÕES HEADER
+*/
+
+header {
+    background-color: var(--bg-base-header-footer);
+
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+
+    padding: 1.6rem 2.8rem;
+}
+
+.input-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.input-wrapper label {
+    display: absolute;
+    top: 0;
+    left: 0;
+
+    height: 1px;
+    width: 1px;
+
+    display: none;
+}
+
+.input-wrapper input {
+    flex: 1;
+    
+    background-color: rgba(82, 132, 170, 0.8);
+    border: 0;
+    border-radius: .4rem;
+
+    padding: 1.2rem 1.4rem;      
+}
+
+.input-wrapper input::placeholder {
+    color: #FFF;
+
+    font-family: "Mulish", sans-serif;
+    font-weight: 600;
+}
+
+/* 
+    CONFIGURAÇÕES MAIN
+*/
+
+.main-wrapper > img {
+    width: 100%;
+    border-radius: 0.5rem;    
+}
+
+.main-wrapper .title-wrapper {
+    margin-bottom: 3.1rem;  
+}
+
+main {
+    margin: 3.1rem 2.2rem;
+}
+
+.main-wrapper main h1,
+aside h1 {
+    color: var(--color-base-title);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+}
+
+.main-wrapper main h1 {
+    margin-bottom: .8rem;
+}
+
+.icon-wrapper > img + img {
+    margin-left: 1.2rem;
+}
+
+.main-wrapper main p {
+    color: var(--color-base-content);
+    line-height: 2.6rem;
+}
+
+/* 
+    CONFIGURAÇÕES ASIDE
+*/
+
+aside {
+    margin: 0 2.2rem 4rem;
+}
+
+aside h1 {
+    margin-bottom: 3.2rem;
+}
+
+.figure-wrapper {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+
+    align-items: center;
+    
+    
+    gap: 3.2rem;
+}
+
+.figure-content-wrapper {
+    display: flex;
+    
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.figure-content-wrapper > img {
+    aspect-ratio: 16/9;
+    height: 8.4rem;  
+    
+    border-radius: .5rem;
+
+    display: block;
+    
+    animation: appear .4s var(--delay) backwards;
+    transition: all .3s ease-in-out;
+}
+
+.figure-content-wrapper > img:hover {
+    filter: hue-rotate(15deg) contrast(105%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
+}
+
+
+
+.figure-content-wrapper h2 {
+    color: var(--color-base-title);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+
+    margin-bottom: .5rem;
+}
+
+.figure-content-wrapper p {
+    color: var(--color-base-content);
+    font-size: 1.4rem;
+    line-height: 2rem;
+
+    
+}
+
+/* 
+    CONFIGURAÇÕES FOOTER
+*/
+
+footer {
+    background-color: var(--bg-base-header-footer);
+
+    padding: 2.6rem 1.6rem;
+
+    text-align: center;
+    color: #FFF;
+    font-weight: 600;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* 
+    MEDIA QUERIES
+*/
+
+@media (min-width: 1024px) {
+    header {       
+        padding: 1.6rem 11.6rem;
+    }
+
+    .title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+    }
+
+
+    .main-wrapper main h1 {
+        margin-bottom: 0;
+    }
+
+
+    main {
+        margin: 3.1rem 0;
+    }
+
+    aside {
+        margin: 0;
+
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        gap: 3.4rem;       
+    }
+}
+
+
+@media(min-width: 1024px) and (max-width: 1220px) {
+        
+    .content {
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        gap: 3.4rem;
+
+        margin: 4.4rem calc((100vw - 1000px) * 0.5);
+    }
+}
+
+@media (min-width: 1221px) {
+    .content {
+        margin: 4.4rem 11rem;
+    }
+}
+
+
